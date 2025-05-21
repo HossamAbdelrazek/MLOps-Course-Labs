@@ -4,6 +4,7 @@ from sklearn.utils import resample
 from sklearn.compose import make_column_transformer
 from sklearn.preprocessing import OneHotEncoder,  StandardScaler
 from mlflow import log_artifact
+import joblib
 
 def rebalance(data):
     """
@@ -91,6 +92,8 @@ def preprocess(df):
     X_test = pd.DataFrame(X_test, columns=col_transf.get_feature_names_out())
 
     #Log the trasnformer as an artifact
-    log_artifact("transformer.pkl", col_transf, local_path="artifacts/")
+    path = "transformer.pkl"
+    joblib.dump(col_transf, path)
+    log_artifact(path, artifact_path="Transformer")
 
     return col_transf, X_train, X_test, y_train, y_test

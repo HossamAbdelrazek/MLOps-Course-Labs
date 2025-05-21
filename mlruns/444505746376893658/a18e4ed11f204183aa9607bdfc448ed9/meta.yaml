@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/a18e4ed11f204183aa9607bdfc448ed9/artifacts
+deleted_time: 1747798475638
+end_time: 1747798361005
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: deleted
+run_id: a18e4ed11f204183aa9607bdfc448ed9
+run_name: puzzled-cat-482
+run_uuid: a18e4ed11f204183aa9607bdfc448ed9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747798356414
+status: 4
+tags: []
+user_id: hossam

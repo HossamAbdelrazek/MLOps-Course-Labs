@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/5aa72e5a9aba461ebd581b33d66fc955/artifacts
+end_time: 1747808665328
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: active
+run_id: 5aa72e5a9aba461ebd581b33d66fc955
+run_name: bouncy-flea-199
+run_uuid: 5aa72e5a9aba461ebd581b33d66fc955
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747808660560
+status: 3
+tags: []
+user_id: hossam

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/9168e87fefb446b0acfeb732c0b9dbe7/artifacts
+end_time: 1747800295527
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: active
+run_id: 9168e87fefb446b0acfeb732c0b9dbe7
+run_name: masked-robin-546
+run_uuid: 9168e87fefb446b0acfeb732c0b9dbe7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747800289330
+status: 3
+tags: []
+user_id: hossam

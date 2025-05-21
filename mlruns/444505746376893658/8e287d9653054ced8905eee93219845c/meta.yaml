@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/8e287d9653054ced8905eee93219845c/artifacts
+end_time: 1747800972068
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: active
+run_id: 8e287d9653054ced8905eee93219845c
+run_name: persistent-shark-259
+run_uuid: 8e287d9653054ced8905eee93219845c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747800965998
+status: 3
+tags: []
+user_id: hossam
