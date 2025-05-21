@@ -34,7 +34,7 @@ def train(X_train, y_train):
     Returns:
         model: trained model
     """
-    model = lgb(n_estimators=200,max_depth=5,learning_rate=0.01)
+    model = lgb(n_estimators=150,max_depth=5,learning_rate=0.01)
     model.fit(X_train, y_train)
 
     ### Log the model with the input and output schema

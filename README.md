@@ -20,7 +20,7 @@ This repository contains a module for trying some models to get experience with 
 
 - Model Training and Logging: We can use any model and play with hyperparameters.
 
-MLflow Integration:
+## MLflow Integration:
 
 - Logs parameters and evaluation metrics (accuracy, precision, recall, F1-score).
 
@@ -35,12 +35,68 @@ MLflow Integration:
 ## Selected Model
 
 - For our case the model selected was a LightGBM classifier as it has the maximum overall scores in F1 and accuracy scores.
-- Key Parameters: n_estimators: 150, Max_depth: 5, learning_rate: 0.01 
+- Key Parameters: n_estimators: 150, Max_depth: 5, learning_rate: 0.01
 
 - ![Best Model:](misc/Scores.png)
 
 ## Model Registering
 
-- The best model was registered for production while the lease cashe size model was registerd for staging, If the production model has issues due to cashe size, the staging model will be served for production. This is a simulation only, not a real approach for our case.
+- The best model was registered for production while the least cashe size model was registerd for staging, If the production model has issues due to cashe size, the staging model will be served for production. This is a simulation only, not a real approach for our case.
 
 - ![alt text](<Screenshot from 2025-05-21 09-44-07.png>)
+
+## Requirments
+
+All the requirements are in `requirements.txt`
+
+To create the env:
+
+    ```bash
+    conda create --name mlflow_env python=3.12
+    conda activate mlflow_env
+    pip install -r requirements.txt
+    ```
+
+## 🚀 Serving & Testing with FastAPI
+
+### 1. API Endpoints
+
+We exposed three endpoints via FastAPI in `app/main.py`:
+
+- **Home** (`GET /`)  
+  A simple welcome message.
+- **Health check** (`GET /health`)  
+  Returns:
+
+  ```json
+  { "status": "healthy" }
+  ```
+
+- **Predict** (`POST /predict`)
+  Accepts a JSON body matching our CustomerData schema, applies the saved transformer and MLflow-logged LightGBM model, and returns:
+
+  ```json
+  { "churn_prediction": 0 }
+  ```
+
+  where 0 or 1 is the model’s churn prediction.
+
+### 2. Testing with TestClient
+
+We wrote tests/test_api.py to verify each endpoint without running a live server
+
+### 3. Running the Tests
+
+  from your project root:
+
+  ```bash
+  pytest tests/
+  ```
+
+  You should see:
+  
+  ![alt text](misc/image-1.png)
+  
+  This is a swagger ui screenshot:
+
+  ![alt text](misc/swaggerui.png)

@@ -92,7 +92,7 @@ def preprocess(df):
     X_test = pd.DataFrame(X_test, columns=col_transf.get_feature_names_out())
 
     #Log the trasnformer as an artifact
-    path = "transformer.pkl"
+    path = "mlartifacts/transformer.pkl"
     joblib.dump(col_transf, path)
     log_artifact(path, artifact_path="Transformer")
 
