@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/be547ed428714847b2b9fff6b9c67759/artifacts
+deleted_time: 1747798475641
+end_time: 1747798165536
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: deleted
+run_id: be547ed428714847b2b9fff6b9c67759
+run_name: smiling-roo-281
+run_uuid: be547ed428714847b2b9fff6b9c67759
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747798160258
+status: 4
+tags: []
+user_id: hossam

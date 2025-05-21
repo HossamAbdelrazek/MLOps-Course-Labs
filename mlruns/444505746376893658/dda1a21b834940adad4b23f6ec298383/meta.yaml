@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/dda1a21b834940adad4b23f6ec298383/artifacts
+deleted_time: 1747800224694
+end_time: 1747800189016
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: deleted
+run_id: dda1a21b834940adad4b23f6ec298383
+run_name: capricious-sloth-990
+run_uuid: dda1a21b834940adad4b23f6ec298383
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747800183248
+status: 3
+tags: []
+user_id: hossam

@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/13afff833638451b9dd9878e24e5f453/artifacts
+deleted_time: 1747798475667
+end_time: 1747797568442
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: deleted
+run_id: 13afff833638451b9dd9878e24e5f453
+run_name: chill-rat-623
+run_uuid: 13afff833638451b9dd9878e24e5f453
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747797568395
+status: 4
+tags: []
+user_id: hossam

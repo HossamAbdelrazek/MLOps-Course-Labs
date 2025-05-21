@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/fc9e56dd704e445bb6fc022c689eaf43/artifacts
+end_time: 1747800943978
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: active
+run_id: fc9e56dd704e445bb6fc022c689eaf43
+run_name: resilient-stag-309
+run_uuid: fc9e56dd704e445bb6fc022c689eaf43
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747800938928
+status: 3
+tags: []
+user_id: hossam

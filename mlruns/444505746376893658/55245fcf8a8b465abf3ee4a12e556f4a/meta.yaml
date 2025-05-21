@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/55245fcf8a8b465abf3ee4a12e556f4a/artifacts
+end_time: 1747800880330
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: active
+run_id: 55245fcf8a8b465abf3ee4a12e556f4a
+run_name: wistful-skunk-831
+run_uuid: 55245fcf8a8b465abf3ee4a12e556f4a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747800874343
+status: 3
+tags: []
+user_id: hossam

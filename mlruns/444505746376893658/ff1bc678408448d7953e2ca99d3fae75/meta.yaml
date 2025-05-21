@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/ff1bc678408448d7953e2ca99d3fae75/artifacts
+end_time: 1747800041806
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: active
+run_id: ff1bc678408448d7953e2ca99d3fae75
+run_name: agreeable-ant-704
+run_uuid: ff1bc678408448d7953e2ca99d3fae75
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747800036576
+status: 3
+tags: []
+user_id: hossam

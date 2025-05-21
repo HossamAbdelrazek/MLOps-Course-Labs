@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1747800188609
+current_stage: None
+description: ''
+last_updated_timestamp: 1747800188609
+name: Support_Vector_Classifier
+run_id: dda1a21b834940adad4b23f6ec298383
+run_link: ''
+source: mlflow-artifacts:/444505746376893658/dda1a21b834940adad4b23f6ec298383/artifacts/model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/444505746376893658/dda1a21b834940adad4b23f6ec298383/artifacts/model
+user_id: null
+version: 3

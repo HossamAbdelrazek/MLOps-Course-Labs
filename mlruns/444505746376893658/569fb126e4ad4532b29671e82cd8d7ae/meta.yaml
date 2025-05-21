@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/569fb126e4ad4532b29671e82cd8d7ae/artifacts
+deleted_time: 1747798475651
+end_time: 1747798107804
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: deleted
+run_id: 569fb126e4ad4532b29671e82cd8d7ae
+run_name: burly-mouse-503
+run_uuid: 569fb126e4ad4532b29671e82cd8d7ae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747798103086
+status: 4
+tags: []
+user_id: hossam

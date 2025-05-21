@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/444505746376893658/df2931333c334eb68b78e0a8b1ca791f/artifacts
+deleted_time: 1747798475652
+end_time: 1747798027667
+entry_point_name: ''
+experiment_id: '444505746376893658'
+lifecycle_stage: deleted
+run_id: df2931333c334eb68b78e0a8b1ca791f
+run_name: dazzling-lark-677
+run_uuid: df2931333c334eb68b78e0a8b1ca791f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747798023426
+status: 4
+tags: []
+user_id: hossam
