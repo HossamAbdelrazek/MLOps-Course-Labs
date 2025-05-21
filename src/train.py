@@ -37,7 +37,7 @@ def train(X_train, y_train):
 
     ### Log the model with the input and output schema
     # Infer signature (input and output schema)
-
+    mlflow
     # Log model
 
     ### Log the data
@@ -47,22 +47,18 @@ def train(X_train, y_train):
 
 def main():
     ### Set the tracking URI for MLflow
-    mlflow.set_tracking_uri("https://localhost:5000")
+    mlflow.set_tracking_uri("http://localhost:5000")
     ### Set the experiment name
     mlflow.set_experiment("Experiment_1")
 
     ### Start a new run and leave all the main function code as part of the experiment
     with mlflow.start_run():
-        ### Log the run ID
-        run_id = mlflow.active_run().info.run_id
-        print(f"Run ID: {run_id}")
-        df = pd.read_csv("data/Churn_Modelling.csv")
+
+        df = pd.read_csv("dataset/Churn_Modelling.csv")
         col_transf, X_train, X_test, y_train, y_test = preprocess(df)
 
-        log_artifact("transformer.pkl", col_transf)
-
         ### Log the max_iter parameter
-
+        
         model = train(X_train, y_train)
 
         
