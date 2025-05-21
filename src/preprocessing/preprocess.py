@@ -91,6 +91,6 @@ def preprocess(df):
     X_test = pd.DataFrame(X_test, columns=col_transf.get_feature_names_out())
 
     #Log the trasnformer as an artifact
-    mlflow.log_artifact("transformer.pkl", col_transf, local_path="artifacts/")
+    log_artifact("transformer.pkl", col_transf, local_path="artifacts/")
 
     return col_transf, X_train, X_test, y_train, y_test
