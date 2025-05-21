@@ -97,6 +97,7 @@ We wrote tests/test_api.py to verify each endpoint without running a live server
   
   ![alt text](misc/image-1.png)
   
-  This is a swagger ui screenshot:
+  These are swaggerui screenshots:
 
-  ![alt text](misc/swaggerui.png)
+  ![alt text](misc/swaggerui1.png)
+  ![alt text](misc/swaggerui2.png)
