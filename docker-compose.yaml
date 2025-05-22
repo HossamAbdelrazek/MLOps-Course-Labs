@@ -1,7 +1,7 @@
 services:
   api:
     build: 
-      context: ./app
+      context: /home/hossam/Desktop/ITI_AI/Material/MLOps/MLOps-Course-Labs/app
       dockerfile: dockerfile
     ports:
         - 8000:8000

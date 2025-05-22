@@ -5,12 +5,7 @@ from typing import Literal
 import logging
 import joblib
 import os
-
-from prometheus_client import Counter, generate_latest
-from starlette.responses import Response
-
-REQUEST_COUNT = Counter("request_count", "Total number of requests")
-
+from prometheus_fastapi_instrumentator import Instrumentator
 
 
 logging.basicConfig(level=logging.INFO)
@@ -21,6 +16,8 @@ model = joblib.load(logged_model) if os.path.exists(logged_model) else None
 logger.info(f"Loading model") if model else logger.error("Model not found")
 
 app = FastAPI(title="Churn Prediction API")
+
+Instrumentator().instrument(app).expose(app)
 
 TRANSFORMER_PATH = "/home/hossam/Desktop/ITI_AI/Material/MLOps/MLOps-Course-Labs/mlartifacts/transformer.pkl"
 def load_transformer(path=TRANSFORMER_PATH):
@@ -68,8 +65,7 @@ class ChurnData(BaseModel):
     EstimatedSalary: float
 
 @app.get("/")
-def read_root():
-    REQUEST_COUNT.inc()
+def home():
     return {"message": "Welcome to the Churn Prediction API!"}
 
 @app.get("/health")
@@ -92,10 +88,6 @@ def predict(data: ChurnData):
     except Exception as e:
         logger.error(f"Error during prediction: {e}")
         return HTTPException(status_code=500, detail=e)
-
-@app.get("/metrics")
-def metrics():
-    return Response(generate_latest(), media_type="text/plain")
     
 if __name__ == "__main__":
     import uvicorn
