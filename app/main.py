@@ -11,7 +11,7 @@ from prometheus_fastapi_instrumentator import Instrumentator
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-logged_model = "/home/hossam/Desktop/ITI_AI/Material/MLOps/MLOps-Course-Labs/mlartifacts/444505746376893658/55245fcf8a8b465abf3ee4a12e556f4a/artifacts/model/model.pkl"
+logged_model = "mlartifacts/444505746376893658/55245fcf8a8b465abf3ee4a12e556f4a/artifacts/model/model.pkl"
 model = joblib.load(logged_model) if os.path.exists(logged_model) else None
 logger.info(f"Loading model") if model else logger.error("Model not found")
 
@@ -19,7 +19,7 @@ app = FastAPI(title="Churn Prediction API")
 
 Instrumentator().instrument(app).expose(app)
 
-TRANSFORMER_PATH = "/home/hossam/Desktop/ITI_AI/Material/MLOps/MLOps-Course-Labs/mlartifacts/transformer.pkl"
+TRANSFORMER_PATH = "mlartifacts/transformer.pkl"
 def load_transformer(path=TRANSFORMER_PATH):
     """
     Load the saved ColumnTransformer.
