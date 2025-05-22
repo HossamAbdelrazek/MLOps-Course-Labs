@@ -72,7 +72,7 @@ def home():
 @app.get("/health")
 def health():
     logger.info("Health check endpoint called")
-    return {"status": "healthy"}
+    return {"status": "ok"}
 
 @app.post("/predict")
 def predict(data: ChurnData):
@@ -92,5 +92,5 @@ def predict(data: ChurnData):
     
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=8080)
     
