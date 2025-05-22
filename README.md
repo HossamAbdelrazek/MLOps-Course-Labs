@@ -43,7 +43,7 @@ This repository contains a module for trying some models to get experience with 
 
 - The best model was registered for production while the least cashe size model was registerd for staging, If the production model has issues due to cashe size, the staging model will be served for production. This is a simulation only, not a real approach for our case.
 
-- ![alt text](<Screenshot from 2025-05-21 09-44-07.png>)
+- ![alt text](<misc/Screenshot from 2025-05-21 09-44-07.png>)
 
 ## Requirments
 
