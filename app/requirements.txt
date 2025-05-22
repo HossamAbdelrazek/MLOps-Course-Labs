@@ -57,6 +57,9 @@ mlflow==2.22.0
 mlflow-skinny==2.22.0
 nest-asyncio==1.6.0
 numpy==2.2.6
+opentelemetry-api==1.33.1
+opentelemetry-sdk==1.33.1
+opentelemetry-semantic-conventions==0.54b1
 packaging==24.2
 pandas==2.2.3
 parso==0.8.4
@@ -64,6 +67,7 @@ pexpect==4.9.0
 pillow==11.2.1
 platformdirs==4.3.8
 pluggy==1.6.0
+prometheus_client==0.22.0
 prompt_toolkit==3.0.51
 protobuf==5.29.4
 psutil==7.0.0

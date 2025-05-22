@@ -1,26 +1,28 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import pandas as pd
-import mlflow
-mlflow.set_tracking_uri('http://localhost:5000')
-
 from typing import Literal
 import logging
+import joblib
+import os
+
+from prometheus_client import Counter, generate_latest
+from starlette.responses import Response
+
+REQUEST_COUNT = Counter("request_count", "Total number of requests")
+
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-logged_model = "mlartifacts/444505746376893658/55245fcf8a8b465abf3ee4a12e556f4a/artifacts/model"
-model = mlflow.pyfunc.load_model(logged_model)
-logger.info(f"Loading model")
+logged_model = "/home/hossam/Desktop/ITI_AI/Material/MLOps/MLOps-Course-Labs/mlartifacts/444505746376893658/55245fcf8a8b465abf3ee4a12e556f4a/artifacts/model/model.pkl"
+model = joblib.load(logged_model) if os.path.exists(logged_model) else None
+logger.info(f"Loading model") if model else logger.error("Model not found")
 
 app = FastAPI(title="Churn Prediction API")
 
-import pandas as pd
-import joblib
-import os
-
-TRANSFORMER_PATH = "mlartifacts/transformer.pkl"
+TRANSFORMER_PATH = "/home/hossam/Desktop/ITI_AI/Material/MLOps/MLOps-Course-Labs/mlartifacts/transformer.pkl"
 def load_transformer(path=TRANSFORMER_PATH):
     """
     Load the saved ColumnTransformer.
@@ -36,6 +38,7 @@ def load_transformer(path=TRANSFORMER_PATH):
     transformer = joblib.load(path)
     return transformer
 
+TRANSFORMER = load_transformer()
 def preprocess_input(input_data: dict, transformer):
     """
     Preprocess input data for prediction.
@@ -52,8 +55,6 @@ def preprocess_input(input_data: dict, transformer):
     transformed_df = pd.DataFrame(transformed, columns=transformer.get_feature_names_out())
     return transformed_df
 
-TRANSFORMER = load_transformer()
-
 class ChurnData(BaseModel):
     CreditScore: float
     Geography: str
@@ -67,8 +68,8 @@ class ChurnData(BaseModel):
     EstimatedSalary: float
 
 @app.get("/")
-def home():
-    logger.info("Home endpoint called")
+def read_root():
+    REQUEST_COUNT.inc()
     return {"message": "Welcome to the Churn Prediction API!"}
 
 @app.get("/health")
@@ -91,7 +92,12 @@ def predict(data: ChurnData):
     except Exception as e:
         logger.error(f"Error during prediction: {e}")
         return HTTPException(status_code=500, detail=e)
+
+@app.get("/metrics")
+def metrics():
+    return Response(generate_latest(), media_type="text/plain")
     
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
+    
